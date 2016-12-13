@@ -1,0 +1,132 @@
+
+body {
+
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 13px;
+}
+
+.menu {
+  height: 70px;
+  width: 70px;
+  right: 70px;
+  top: 20px;
+  text-align: center;
+  position: absolute;
+
+  overflow: hidden;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  z-index: 999;
+}
+.menu.active {
+  width: calc(100% - 140px);
+}
+.menu.active .menuContent * {
+  opacity: 1;
+}
+.menu.active span i:nth-child(1) {
+  -webkit-transform: rotate(-45deg) translate(-50%, -50%);
+          transform: rotate(-45deg) translate(-50%, -50%);
+  top: 50%;
+}
+.menu.active span i:nth-child(2) {
+  -webkit-transform: translateX(-100px);
+          transform: translateX(-100px);
+  opacity: 0;
+}
+.menu.active span i:nth-child(3) {
+  -webkit-transform: rotate(45deg) translate(-50%, -50%);
+          transform: rotate(45deg) translate(-50%, -50%);
+  top: 50%;
+}
+.menu span {
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+
+  z-index: 1;
+}
+.menu span i {
+  position: absolute;
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  width: 45%;
+  height: 2px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: #cccccc;
+  -webkit-transition: opacity .1s ease .1s, -webkit-transform .3s ease;
+  transition: opacity .1s ease .1s, -webkit-transform .3s ease;
+  transition: transform .3s ease, opacity .1s ease .1s;
+  transition: transform .3s ease, opacity .1s ease .1s, -webkit-transform .3s ease;
+}
+.menu span i:nth-child(1) {
+  top: 40%;
+}
+.menu span i:nth-child(2) {
+  top: 50%;
+}
+.menu span i:nth-child(3) {
+  top: 60%;
+}
+.menu .menuContent {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  line-height: 70px;
+  right: 0px;
+  text-align: center;
+}
+.menu .menuContent * {
+  opacity: 0;
+}
+.menu .menuContent ul li {
+  display: inline-block;
+  margin-left: 50px;
+  margin-right: 50px;
+  color: #2d3235;
+  -webkit-transition: opacity .3s ease .3s;
+  transition: opacity .3s ease .3s;
+  cursor: pointer;
+  position: relative;
+}
+.menu .menuContent ul li:hover:before {
+  opacity: .8;
+  top: 13px;
+  left: 20px;
+}
+.menu .menuContent ul li:hover:after {
+  opacity: .8;
+  bottom: 13px;
+  left: -20px;
+}
+.menu .menuContent ul li:before, .menu .menuContent ul li:after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background: #cccccc;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+.menu .menuContent ul li:before {
+  -webkit-transform: rotate(-55deg);
+          transform: rotate(-55deg);
+  left: 60px;
+  top: -30px;
+  opacity: 0;
+  right: 0;
+  margin: auto;
+}
+.menu .menuContent ul li:after {
+  -webkit-transform: rotate(-55deg);
+          transform: rotate(-55deg);
+  left: -60px;
+  bottom: -30px;
+  opacity: 0;
+  right: 0;
+  margin: auto;
+}
